@@ -1,4 +1,4 @@
-import env from './config/setting.js'
+//import env from './config/setting.js'
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
@@ -37,6 +37,6 @@ app.get('/', (req, res) => {
   res.send('API em execucao');
 });
 
-app.listen(process.env.PORT || 8081, () => {
-  logger.info(`Servidor (${env}) em execucao na porta ${process.env.PORT}`);
+app.listen(process.env.PORT || 8081, () => {  
+  logger.info(`Servidor (${process.env.NODE_ENV}) em execucao na porta ${process.env.PORT}`);
 });
