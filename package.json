@@ -7,7 +7,7 @@
     "start": "env-cmd -f ./config/.env.dev node -r dotenv/config --experimental-modules app.js",
     "encrypt:files": "gpg --symmetric --cipher-algo AES256 config/.env.dev && gpg --symmetric --cipher-algo AES256 config/.env.prod",
     "decrypt:files": "chmod u+x decrypt_secret.sh && ./decrypt_secret.sh",
-    "prod": "env-cmd -f ./config/.env.dev node app.js",
+    "prod": "env-cmd -f ./config/.env.prod node app.js",
     "test": "env-cmd -f ./config/.env.dev mocha tests/*.test.js"
   },
   "keywords": [],
