@@ -1,3 +1,4 @@
+import env from './config/setting.js'
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
@@ -37,5 +38,5 @@ app.get('/', (req, res) => {
 });
 
 app.listen(process.env.PORT || 8081, () => {
-  logger.info(`Servidor em execucao na porta ${process.env.PORT}`);
+  logger.info(`Servidor (${env}) em execucao na porta ${process.env.PORT}`);
 });
