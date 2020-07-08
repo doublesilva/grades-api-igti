@@ -26,7 +26,9 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(
-  cors()
+  cors({
+    origin: RegExp("((http|https)://)(doublesilva)([\w_-]+(?:(?:\.[\w_-]+)+))(herokuapp.com)?")
+  })
 );
 
 app.use(gradeRouter);
