@@ -21,9 +21,16 @@ export default (mongoose) =>{
             type: String,
             required: true
         }
+    }, {        
+        toJSON: {
+          transform: function (doc, ret) {
+            ret.id = ret._id;
+            delete ret._id;
+            delete ret.__v;          
+          }
+        }
     });
-
-    return mongoose.model.grades || mongoose.model('grades', gradesSchema);
+    return mongoose.model('grades', gradesSchema);
 } 
 
 
